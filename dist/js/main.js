@@ -1090,6 +1090,51 @@ const API_KEY = '21ee2a95-6271-421f-9032-0af958c10d32';
 
 
 
+/***/ }),
+
+/***/ "./src/modal.js":
+/*!**********************!*\
+  !*** ./src/modal.js ***!
+  \**********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ fillModal)
+/* harmony export */ });
+
+
+function fillModal(imageSelector, titleSelector, descrSelector, yearSelector, data ) {
+    try {
+        const img = document.querySelector(imageSelector);
+        img.style.backgroundImage = `url('${data.src}')`;
+    }
+    catch {};
+    try {
+        const title = document.querySelector(titleSelector);
+        title.innerText = data.title;
+    }
+    catch {}
+    try {
+        const year = document.querySelector(yearSelector);
+        year.innerText = data.year;
+    }
+    catch {}
+    
+    try {
+        const descr = document.querySelector(descrSelector);
+        descr.innerText = data.descr;
+    }
+    catch {}
+
+    const modal = document.querySelector('.modal');
+    modal.classList.remove('hide');
+    modal.classList.add('show');
+    document.getElementsByTagName("body")[0].style.overflowY = "hidden";
+}
+
+
+
 /***/ })
 
 /******/ 	});
@@ -1156,31 +1201,11 @@ var __webpack_exports__ = {};
   \***********************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _consts__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./consts */ "./src/consts.js");
+/* harmony import */ var _modal__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modal */ "./src/modal.js");
 
 
 
-function fillModal(imageSelector, titleSelector, descrSelector, yearSelector, data ) {
 
-  const img = document.querySelector(imageSelector);
-  img.style.backgroundImage = `url('${data.src}')`;
-  
-  const title = document.querySelector(titleSelector);
-  title.innerText = data.title;
-  
-  
-  try {
-  const year = document.querySelector(yearSelector);
-  year.innerText = data.year;
-  }
-  catch {}
-  const descr = document.querySelector(descrSelector);
-  descr.innerText = data.descr;
-  
-  const modal = document.querySelector('.modal');
-  modal.classList.remove('hide');
-  modal.classList.add('show');
-  document.getElementsByTagName("body")[0].style.overflowY = "hidden";
-  }
   
 
 const filterTopButton = document.querySelectorAll('.filter-link.top');
@@ -1495,7 +1520,7 @@ async function getMoveInfo(id) {
   renderData.title = data.nameRu;
   renderData.src = data.posterUrlPreview;
 
-  fillModal('.modal_image','.modal_title','.modal_descr','',renderData)
+  (0,_modal__WEBPACK_IMPORTED_MODULE_1__["default"])('.modal_image','.modal_title','.modal_descr','',renderData)
   console.log(data);
 }
 
