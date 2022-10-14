@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies Search</title>
+    
+    
+    <script defer src="dist/js/main.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="conteiner">
+        <header class="top-menu">
+            <div class="logo">MovieApp</div>
+            <div class="search">
+                <form action="">
+                    <input class="search-input" type="text">
+                </form>
+            </div>
+        </header>
+        <div class="two-columns">
+            <div class="side-filter">
+                <div class="filter">
+                    <h2>Фильтр</h2>
+
+                    <div class="link-cloud">
+                        <a href="#" class="filter-link" value="FILM">Фильмы</a>
+                        <a href="#" class="filter-link" value="SERIAL">Сериалы</a>
+                        <a href="#" class="filter-link top" data-url="top_100">TOP 250</a>
+                        <a href="#" class="filter-link top" data-url="top_250">TOP 100</a>
+                    </div>
+                    <!-- <fieldset>
+                        <legend>Фильтр</legend> -->
+                    <label for="genre-select">Жанры</label>
+                    <select id="genre-select"></select>
+                    <label for="year-select">Года</label>
+                    <select id="year-select">
+                        <option>2020</option>
+                    </select>
+
+                    <label for="country-select">Страны</label>
+                    <select id="country-select">
+                        <option>Россия</option>
+                    </select>
+                    <!-- </fieldset> -->
+                    <button class="button button-select">Выбрать</button>
+                </div>
+            </div>
+            <div class="main-conteiner">
+                <div class="movies-conteiner">
+                </div>
+                <div class="pagination">
+                </div>
+            </div>
+        </div>
+
+        <div class="modal">
+            <div class="modal-window">
+                <button id="modal-movie-close-btn" class="modal-close-button">&times;</button>
+                <div class="modal-movie-conteiner">
+                    <div class="modal_image"></div>
+                    <div class="modal_movie-info">
+                        <div class="modal_title"></div>
+                    
+                        <div class="modal_movie-info-year"></div>
+                        <div class="modal_movie-info-genre"></div>
+                        <div class="modal_descr"></div>
+                    </div>
+                    
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
